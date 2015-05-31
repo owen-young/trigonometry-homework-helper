@@ -1,0 +1,77 @@
+@font-face {
+  font-family:myFont;
+  src: url(fonts/Oswald-Regular.ttf)
+}
+
+/* @font-face kit by Fonts2u (http://www.fonts2u.com) */ @font-face {font-family:"WeblySleek UI Semilight";src:url("fonts/WeblySleek_UI_Semilight/cssweblysleekuisl.eot?") format("eot"),url("fonts/WeblySleek_UI_Semilight/weblysleekuisl.woff") format("woff"),url("fonts/WeblySleek_UI_Semilight/weblysleekuisl.ttf") format("truetype"),url("fonts/WeblySleek_UI_Semilight/weblysleekuisl.svg#WeblySleekUISemilight") format("svg");font-weight:normal;font-style:normal;}
+
+
+
+html {
+  background:url(assets/gradient.png);
+}
+
+#prompt1 {
+  font-size: 25px;
+  color:#fff;
+  font-family:"myFont";
+  text-align: center;
+  
+}
+
+#prompt2 {
+  font-size:18px;
+  text-align: center;
+  font-family:"WeblySleek UI Semilight";
+  color:#000;
+}
+
+#test {
+  font-size:16px;
+}
+
+.material {
+  padding-top:16px;
+  background:#FFFFFF;
+  padding-right:20px;
+  padding-left:20px;
+  border-radius:7px;
+  font-family:"WeblySleek UI Semilight";
+  width:300px;
+  font-size:small;
+  
+}
+
+input#clearVals {
+    -webkit-user-select: none;   cursor: default;   font-family: 'WeblySleek UI Semilight';
+    font-size:120%;
+}
+
+input#submitVals {
+    -webkit-user-select: none;   cursor: default;   font-family: 'WeblySleek UI Semilight';   
+     font-size: 120%; 
+}
+
+#triangle {
+  float:left;
+  width:500px;
+  height:500px;
+  -webkit-filter: invert(100%);
+  position:absolute;
+  
+}
+
+input[type="Number"] {
+  font-family:"WeblySleek UI Semilight";
+}
+
+#ambigCase {
+  font-size:25px;
+  text-align: center;
+  font-family:"WeblySleek UI Semilight";
+  color:#f7f704;
+  
+}
+
+
+
