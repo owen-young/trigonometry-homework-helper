@@ -1,4 +1,3 @@
-
 $(function(){
   $('#form1').materialForm();
   $('#form1').center();
@@ -6,6 +5,85 @@ $(function(){
   $('#form2').hide();
   $('#triangle').moveLeft();
   $('#ambigCase').hide();
+  $('#lang').change(function() {
+    if($('#lang').val() == 'DE') {
+      $('#submitVals').prop('value', 'Eintragen');
+      $('#clearVals').prop('value', 'Zahlenwerte löschen');
+      $('#prompt1').text('Bringe alle bekannten Zahlenwerte von Seiten A, B, und C und Winkel A, B, und C ein.');
+      $('#sA').text('Seite A:');
+      $('#sB').text('Seite B:');
+      $('#sC').text('Seite C:');
+      $('#aA').text('Winkel A:');
+      $('#aB').text('Winkel B:');
+      $('#aC').text('Winkel C:');
+      $('#a1').text('Fläche:');
+      $('#sA2').text('Seite A:');
+      $('#sB2').text('Seite B:');
+      $('#sC2').text('Seite C:');
+      $('#aA2').text('Winkel A:');
+      $('#aB2').text('Winkel B:');
+      $('#aC2').text('Winkel C:');
+      $('#a2').text('Fläche:');
+      $('#prompt2').text('Eine Ausnahme wurde gefunden! Informationen:');
+    } else if($('#lang').val() == 'na' || $('#lang').val() == 'EN') {
+        $('#submitVals').prop('value', 'Submit');
+        $('#clearVals').prop('value', 'Clear values');
+        $('#prompt1').text('Enter all known values of sides A, B, and C and angles A, B, and C. ');
+        $('#sA').text('Side A:');
+        $('#sB').text('Side B:');
+        $('#sC').text('Side C:');
+        $('#aA').text('Angle A:');
+        $('#aB').text('Angle B:');
+        $('#aC').text('Angle C:');
+        $('#a1').text('Area:');
+        $('#sA2').text('Side A:');
+        $('#sB2').text('Side B:');
+        $('#sC2').text('Side C:');
+        $('#aA2').text('Angle A:');
+        $('#aB2').text('Angle B:');
+        $('#aC2').text('Angle C:');
+        $('#a2').text('Area:');
+        $('#prompt2').text('Ambiguous case found! Information:');
+    } else if($('#lang').val() == 'FR') {
+        $('#submitVals').prop('value', 'Soumettez');
+        $('#clearVals').prop('value', 'Enlevez');
+        $('#prompt1').text('Donnez les côtés A, B, ou C ou les angles A, B, ou C que vous savez.');
+        $('#sA').text('Côté A:');
+        $('#sB').text('Côté B:');
+        $('#sC').text('Côté C:');
+        $('#aA').text('Angle A:');
+        $('#aB').text('Angle B:');
+        $('#aC').text('Angle C:');
+        $('#a1').text('La Superficie:');
+        $('#sA2').text('Côté A:');
+        $('#sB2').text('Côté B:');
+        $('#sC2').text('Côté C:');
+        $('#aA2').text('Angle A:');
+        $('#aB2').text('Angle B:');
+        $('#aC2').text('Angle C:');
+        $('#a2').text('La Superficie:');
+        $('#prompt2').text('Un cas ambigu est trouvé:');
+    } else if($('#lang').val() == 'DK') {
+        $('#submitVals').prop('value', 'Indsend');
+        $('#clearVals').prop('value', 'Fjern tal');
+        $('#prompt1').text('Opdater alle kendte tal til sider A, B, og C og vinkler A, B, og C');
+        $('#sA').text('Side A:');
+        $('#sB').text('Side B:');
+        $('#sC').text('Side C:');
+        $('#aA').text('Vinkel A:');
+        $('#aB').text('Vinkel B:');
+        $('#aC').text('Vinkel C:');
+        $('#a1').text('Areal:');
+        $('#sA2').text('Side A:');
+        $('#sB2').text('Side B:');
+        $('#sC2').text('Side C:');
+        $('#aA2').text('Vinkel A:');
+        $('#aB2').text('Vinkel B:');
+        $('#aC2').text('Vinkel C:');
+        $('#a2').text('Areal:');
+        $('#prompt2').text('Undtagelse funden! Information:');
+    }
+  });
 });
 
 //dont worry about it
@@ -33,7 +111,8 @@ var sideA, sideB, sideC, angleA, angleB, angleC, area;
 var sideA2, sideB2, sideC2, angleA2, angleB2, angleC2, area2;
 var isTri;
 var text, text2;
-
+area = 0;
+area2 = 0;
 document.getElementById("submitVals").addEventListener("click", function init() {
   text = document.querySelector("#form1");
   sideA = text.elements[0].value;
@@ -345,7 +424,7 @@ function showAnswers(ambig) {
   text.elements[3].value = radToDeg(angleA);
   text.elements[4].value = radToDeg(angleB);
   text.elements[5].value = radToDeg(angleC);
-  text.elements[8].value = area;
+  
   if ((!isTri) || (angleA===0 || angleB===0)) {
     text = document.querySelector("#form1");
     text.elements[0].value  = undefined;
@@ -355,9 +434,24 @@ function showAnswers(ambig) {
     text.elements[4].value  = undefined;
     text.elements[5].value  = undefined;
     text.elements[8].value  = undefined;
-    $('#ambigCase').text("No triangle can be formed with the given information");
-    $('#ambigCase').fadeIn("slow");
-    $('#ambigCase').delay(5000).fadeOut();
+    
+    if($('#lang').val() == 'EN' || $('#lang').val() == 'na') {
+      $('#ambigCase').text("No triangle can be formed with the given information.");
+      $('#ambigCase').fadeIn("slow");
+      $('#ambigCase').delay(5000).fadeOut();
+    } else if($('#lang').val() == 'DE') {
+      $('#ambigCase').text('Kein Dreieck kann mit den angeführten Zahlen bilden.');
+      $('#ambigCase').fadeIn("slow");
+      $('#ambigCase').delay(5000).fadeOut();
+    } else if($('#lang').val() == 'FR') {
+      $('#ambigCase').text('Ces valeurs ne peut pas faire une triangle.');
+      $('#ambigCase').fadeIn("slow");
+      $('#ambigCase').delay(5000).fadeOut();
+    } else if($('#lang').val() == 'DK') {
+      $('#ambigCase').text('Ingen trekant kan skabe med informationen.');
+      $('#ambigCase').fadeIn("slow");
+      $('#ambigCase').delay(5000).fadeOut();
+    }
   } else if (ambig && (sideA2>0 && sideB2>0 && sideC2>0)) {
     $(function() {
       $("#form2").fadeIn("slow");
@@ -370,7 +464,7 @@ function showAnswers(ambig) {
     text2.elements[3].value = radToDeg(angleA2);
     text2.elements[4].value = radToDeg(angleB2);
     text2.elements[5].value = radToDeg(angleC2);
-    text2.elements[6].value = area2;
+    text2.elements[6].value = area2;   
   }
 }
 
@@ -382,22 +476,35 @@ function areaC(sideA, sideB, angleC) {
   var temp = 0.5 * sideA * sideB;
   temp *= Math.sin(angleC);
   area = temp;
+  if ((!isTri) || (angleA===0 || angleB===0)) {
+    text.elements[8].value  = undefined;
+  } else {
+    text.elements[8].value = area; }
 }
 
 function areaA(sideB, sideC, angleA) {
   var temp = 0.5 * sideB * sideC;
   temp *= Math.sin(angleA);
   area = temp;
+  if ((!isTri) || (angleA===0 || angleB===0)) {
+    text.elements[8].value  = undefined;
+  } else {
+    text.elements[8].value = area; }
 }
 
 function areaB(sideA, sideC, angleB) {
   var temp = 0.5 * sideA * sideC;
   temp *= Math.sin(angleB);
   area = temp;
+  if ((!isTri) || (angleA===0 || angleB===0)) {
+    text.elements[8].value  = undefined;
+  } else {
+    text.elements[8].value = area; }
 }
 
 function areaCa(sideA2, sideB2, angleC2) {
   var temp = 0.5 * sideA2 * sideB2;
   temp *= Math.sin(angleC2);
   area2 = temp;
+
 }

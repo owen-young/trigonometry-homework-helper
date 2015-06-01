@@ -7,29 +7,31 @@
   <link rel="stylesheet" type="text/css" href="styles.css" />
   <link rel="stylesheet" type="text/css" href="css/jquery.material.form.css" />
   <script src="js/jquery.material.form.js" type="text/javascript"></script>
+  <meta charset="utf-8"/>
+
   
 </head>
 <body>
   <h1 id="prompt1">Enter all known values of sides A, B, and C and angles A, B, and C. </h1>
   <form id="form1" action="" class="material">
-    <table>
+    <table id="t1">
       <tr>
-        <td>Side A:</td>  <td><input type="Number" name="sideA"> </td>
+        <td id="sA">Side A:</td>  <td><input type="Number" name="sideA"> </td>
       </tr>
       <tr>
-        <td>Side B:</td>  <td><input type="Number" name="sideB"></td>
+        <td id="sB">Side B:</td>  <td><input type="Number" name="sideB"></td>
       </tr>
       <tr>
-        <td> Side C:</td> <td><input type="Number" name="sideC"></td>
+        <td id="sC"> Side C:</td> <td><input type="Number" name="sideC"></td>
       </tr>
       <tr>
-        <td>Angle A:</td>  <td><input type="Number" name="angleA"></td>
+        <td id="aA">Angle A:</td>  <td><input type="Number" name="angleA"></td>
       </tr>
       <tr>
-        <td>Angle B:</td>  <td><input type="Number" name="angleB"></td>
+        <td id="aB">Angle B:</td>  <td><input type="Number" name="angleB"></td>
       </tr>
       <tr>
-        <td>Angle C:</td>  <td><input type="Number" name="angleC"></td>
+        <td id="aC">Angle C:</td>  <td><input type="Number" name="angleC"></td>
       </tr>
       <tr>
         <td><input type="button" value="Clear values" id="clearVals"></td>
@@ -37,39 +39,46 @@
         <script src="main.js" type="text/javascript"></script>
       </tr>
       <tr>
-        <td>Area:</td>  <td><input type="Number" name="area" value="Area will appear here."></p></td>
+        <td id="a1">Area:</td>  <td><input type="Number" name="area"></p></td>
       </tr>
     </table>
   </form>
   <h2 id="ambigCase"></h2>  
   <form id="form2" action="" class="material">
-  <table>
+  <table id="t2">
     <tr>
       <p id="prompt2">Ambiguous case found! Information:</p>
     </tr>
     <tr>
-      <td>Side A:</td>  <td><input type="Number" name="sideA2"> </td>
+      <td id="sA2">Side A:</td>  <td><input type="Number" name="sideA2"> </td>
     </tr>
     <tr>
-      <td>Side B:</td>  <td><input type="Number" name="sideB2"></td>
+      <td id="sB2">Side B:</td>  <td><input type="Number" name="sideB2"></td>
     </tr>
     <tr>
-      <td>Side C:</td>  <td><input type="Number" name="sideC2"></td>
+      <td id="sC2">Side C:</td>  <td><input type="Number" name="sideC2"></td>
     </tr>
     <tr>
-      <td>Angle A:</td>  <td><input type="Number" name="angleA2"></td>
+      <td id="aA2">Angle A:</td>  <td><input type="Number" name="angleA2"></td>
     </tr>
     <tr>
-      <td>Angle B:</td>  <td><input type="Number" name="angleB2"></td>
+      <td id="aB2">Angle B:</td>  <td><input type="Number" name="angleB2"></td>
     </tr>
     <tr>
-      <td>Angle C:</td>  <td><input type="Number" name="angleC2"></td>
+      <td id="aC2">Angle C:</td>  <td><input type="Number" name="angleC2"></td>
     </tr>
     <tr>
-      <td>Area:</td>  <td><input type="Number" name="area2" value="Area will appear here."></td>
+      <td id="a2">Area:</td>  <td><input type="Number" name="area2"></td>
     </tr>
   </table>
 </form>
 <img src="assets/triangle.png" id="triangle"> 
+<select name="language" id="lang">
+  <option value="na">Select a language (Defaults to English) </option>
+  <option value="EN">English</option>
+  <option value="DE">Deutsch</option>
+  <option value="FR">Français</option>
+  <option value="DK">Dansk</option>
+</select>
 </body>
 </html>
