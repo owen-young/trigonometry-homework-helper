@@ -45,9 +45,9 @@ $(function(){
         $('#a2').text('Area:');
         $('#prompt2').text('Ambiguous case found! Information:');
     } else if($('#lang').val() == 'FR') {
-        $('#submitVals').prop('value', 'Soumettez');
-        $('#clearVals').prop('value', 'Enlevez');
-        $('#prompt1').text('Donnez les côtés A, B, ou C ou les angles A, B, ou C que vous savez.');
+        $('#submitVals').prop('value', 'Calculer');
+        $('#clearVals').prop('value', 'Annuler');
+        $('#prompt1').text('Renseignez les dimensions des angles ou côtés que vous connaissez.');
         $('#sA').text('Côté A:');
         $('#sB').text('Côté B:');
         $('#sC').text('Côté C:');
@@ -444,7 +444,7 @@ function showAnswers(ambig) {
       $('#ambigCase').fadeIn("slow");
       $('#ambigCase').delay(5000).fadeOut();
     } else if($('#lang').val() == 'FR') {
-      $('#ambigCase').text('Ces valeurs ne peut pas faire une triangle.');
+      $('#ambigCase').text('Ces valeurs ne peuvent construire un triangle.');
       $('#ambigCase').fadeIn("slow");
       $('#ambigCase').delay(5000).fadeOut();
     } else if($('#lang').val() == 'DK') {
