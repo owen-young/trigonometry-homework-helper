@@ -66,7 +66,7 @@ $(function(){
     } else if($('#lang').val() == 'DK') {
         $('#submitVals').prop('value', 'Indsend');
         $('#clearVals').prop('value', 'Fjern tal');
-        $('#prompt1').text('Opdater alle kendte tal til sider A, B, og C og vinkler A, B, og C');
+        $('#prompt1').text('Opdater alle kendte tal til sider A, B, og C og vinkler A, B, og C.');
         $('#sA').text('Side A:');
         $('#sB').text('Side B:');
         $('#sC').text('Side C:');
@@ -81,7 +81,7 @@ $(function(){
         $('#aB2').text('Vinkel B:');
         $('#aC2').text('Vinkel C:');
         $('#a2').text('Areal:');
-        $('#prompt2').text('Undtagelse funden! Information:');
+        $('#prompt2').text('Undtagelse fundet! Information:');
     }
   });
 });
@@ -448,7 +448,7 @@ function showAnswers(ambig) {
       $('#ambigCase').fadeIn("slow");
       $('#ambigCase').delay(5000).fadeOut();
     } else if($('#lang').val() == 'DK') {
-      $('#ambigCase').text('Ingen trekant kan skabe med informationen.');
+      $('#ambigCase').text('Ingen trekant kan skabes med den tilgængelige information.');
       $('#ambigCase').fadeIn("slow");
       $('#ambigCase').delay(5000).fadeOut();
     }
